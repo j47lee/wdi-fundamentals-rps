@@ -4,7 +4,7 @@
 'use strict';
 
 function getInput() {
-    console.log("Please choose either 'rock', 'paper', or 'scissors'.")
+    console.log("Please choose either 'rock', 'paper', or 'scissors’.”)
     return prompt();
 }
 function randomPlay() {
@@ -25,14 +25,20 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    return /* Your Expression */;
+    return move || getInput();
+
+/* var ‘move’ with value is truthy and will return ‘move’ value; ‘move’ with no value / null is falsey and will return getInput() value */
+
 }
 
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    return /* Your Expression */;
+    return move || randomPlay();
+
+/* var ‘move’ with value is truthy and will return ‘move’ value; ‘move’ with no value / null is falsey and will return randomPlay() value */
+
 }
 
 function getWinner(playerMove,computerMove) {
